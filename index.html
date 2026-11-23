@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Navera Sajjad — BS Computer Science student, President of IT Nexus Society.">
+<title>Navera Sajjad | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e9;--card:#fffdf9;--ink:#1f2a2e;--muted:#5d6b6f;--teal:#0f766e;--clay:#c2410c;--line:#e3dacb;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.7 var(--sans)}
+a{color:inherit}
+.layout{display:grid;grid-template-columns:320px 1fr;min-height:100vh;max-width:1280px;margin:auto}
+.side{position:sticky;top:0;height:100vh;padding:48px 36px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:700 30px var(--serif);margin-bottom:22px;box-shadow:6px 6px 0 var(--clay)}
+.side h1{font:700 30px/1.15 var(--serif);margin:0 0 8px}
+.role{color:var(--teal);font-weight:600;font-size:13px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:13px;margin:0}
+.side nav{display:flex;flex-direction:column;gap:6px;margin:36px 0}
+.side nav a{text-decoration:none;color:var(--muted);font-size:14px;padding:6px 0;border-bottom:1px solid transparent;width:max-content}
+.side nav a:hover{color:var(--ink);border-color:var(--clay)}
+.contact{margin-top:auto;display:flex;flex-direction:column;gap:6px;font-size:13px}
+.contact a{color:var(--muted);text-decoration:none;word-break:break-all}.contact a:hover{color:var(--teal)}
+main{padding:56px 6% 40px}
+section{padding:0 0 64px}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:10px}
+h2{font:700 clamp(28px,3.4vw,38px)/1.15 var(--serif);margin:0 0 24px}
+.intro h2{font-size:clamp(34px,4.6vw,54px);max-width:640px}
+.intro h2 em{color:var(--teal);font-style:italic}
+p{margin:0 0 14px;color:var(--muted);max-width:660px}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pill{border:1px solid var(--line);background:var(--card);padding:6px 13px;border-radius:99px;font-size:12px}
+.lead-card{display:flex;gap:18px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--clay);border-radius:10px;padding:26px;max-width:700px}
+.lead-card h3{font:700 20px var(--serif);margin:0 0 4px}.lead-card small{color:var(--teal);font-weight:600}
+.lead-card p{margin:10px 0 0}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:760px}
+.skill-group{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px}
+.skill-group h3{font:700 16px var(--serif);margin:0 0 12px}
+.skill-group ul{list-style:none;margin:0;padding:0}
+.skill-group li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px dashed var(--line);font-size:13px}
+.skill-group li span{color:var(--teal);font-size:12px;text-align:right}
+.projects{display:grid;gap:16px;max-width:760px}
+.project{display:grid;grid-template-columns:64px 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px;transition:.2s}
+.project:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 12px 30px #0f766e1a}
+.num{font:700 40px/1 var(--serif);color:var(--clay);opacity:.85}
+.project h3{font:700 21px var(--serif);margin:0 0 8px}
+.project p{margin:0 0 14px}
+.tags{display:flex;gap:7px;flex-wrap:wrap}.tags span{font-size:11px;background:#e7f1ef;color:var(--teal);padding:4px 10px;border-radius:5px;font-weight:600}
+.btn{display:inline-block;margin-top:16px;font-size:12px;font-weight:600;text-decoration:none;color:var(--teal);border:1px solid var(--teal);padding:7px 14px;border-radius:6px}.btn:hover{background:var(--teal);color:#fff}
+.timeline{position:relative;max-width:700px;padding-left:28px}
+.timeline:before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.edu{position:relative;margin-bottom:22px}
+.edu:before{content:"";position:absolute;left:-28px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--teal)}
+.edu:first-child:before{background:var(--clay);border-color:var(--clay)}
+.edu h3{font:700 18px var(--serif);margin:0}.edu p{margin:2px 0 0}.edu small{color:var(--clay);font-weight:600;font-size:12px}
+.extras{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:700px;margin-top:30px}
+.extra{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}.extra b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);margin-bottom:4px}
+.contact-big{display:grid;gap:0;max-width:520px}
+.contact-big a{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:14px;word-break:break-all}
+.contact-big a:hover{color:var(--teal)}.contact-big span{color:var(--muted);flex:none}
+footer{border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:12px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:36px 6% 28px}.side nav{flex-direction:row;flex-wrap:wrap;gap:6px 18px;margin:22px 0}.contact{margin-top:0}main{padding:40px 6% 30px}}
+@media(max-width:600px){.skills,.extras{grid-template-columns:1fr}.project{grid-template-columns:1fr;gap:8px}.lead-card{padding:20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="side">
+    <div class="avatar">NS</div>
+    <h1>Navera Sajjad</h1>
+    <p class="role">President – IT Nexus Society</p>
+    <p class="sub">BS Computer Science Student</p>
+    <nav>
+      <a href="#about">About</a><a href="#leadership">Leadership</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="contact">
+      <a href="mailto:naverasajjad@gmail.com">naverasajjad@gmail.com</a>
+      <a href="tel:03116484875">0311-6484875</a>
+    </div>
+  </aside>
+
+  <main>
+    <section class="intro" id="about">
+      <div class="kicker">Hello, I'm Navera</div>
+      <h2>Aspiring tech leader, <em>building with purpose.</em></h2>
+      <p>I'm a BS Computer Science student at the University of Kamalia. I'm ambitious, confident and goal-oriented, with a strong interest in technology, innovation and leadership.</p>
+      <p>I have a keen interest in public speaking, research, entrepreneurship and continuous personal and professional development.</p>
+      <div class="pill-row"><span class="pill">Public speaking</span><span class="pill">Research</span><span class="pill">Entrepreneurship</span><span class="pill">Leadership</span></div>
+    </section>
+
+    <section id="leadership">
+      <div class="kicker">Leadership</div>
+      <h2>Leading on campus.</h2>
+      <div class="lead-card">
+        <div><h3>President, IT Nexus Society</h3><small>University of Kamalia</small>
+        <p>I lead the society with a focus on leadership, student engagement, teamwork and promoting technical learning.</p></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="kicker">Skills</div>
+      <h2>What I bring.</h2>
+      <div class="skills">
+        <div class="skill-group"><h3>Technical</h3><ul>
+          <li>C++ Programming <span>Intermediate</span></li>
+          <li>Object-Oriented Programming <span>Academic project experience</span></li>
+          <li>Microsoft Office <span>Good working proficiency</span></li></ul></div>
+        <div class="skill-group"><h3>Professional</h3><ul>
+          <li>Communication &amp; public speaking</li>
+          <li>Leadership &amp; team management</li>
+          <li>Presentation &amp; coordination</li></ul></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="kicker">Projects</div>
+      <h2>Selected work.</h2>
+      <div class="projects">
+        <article class="project"><div class="num">01</div><div>
+          <h3>SafeHer AI</h3>
+          <p>A women's safety and campus harassment-support application designed to provide safety assistance and support through technology.</p>
+        </div></article>
+        <article class="project"><div class="num">02</div><div>
+          <h3>Chat Management System</h3>
+          <p>A university semester project developed using C++, applying Object-Oriented Programming concepts.</p>
+          <div class="tags"><span>C++</span><span>OOP</span></div>
+          <a class="btn" href="projects/chat-management-system/ChatManagementSystem.cpp" target="_blank" rel="noreferrer">View source code ↗</a>
+        </div></article>
+        <article class="project"><div class="num">03</div><div>
+          <h3>Complaint Management System</h3>
+          <p>A menu-driven console application to add, view, search, resolve and delete complaints, built with OOP concepts such as inheritance, polymorphism, function overloading and friend functions.</p>
+          <div class="tags"><span>C++</span><span>OOP</span><span>Inheritance</span></div>
+          <a class="btn" href="projects/complaint-management-system/ComplaintManagementSystem.cpp" target="_blank" rel="noreferrer">View source code ↗</a>
+        </div></article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="kicker">Education</div>
+      <h2>Academic background.</h2>
+      <div class="timeline">
+        <div class="edu"><small>CURRENTLY ENROLLED</small><h3>BS Computer Science</h3><p>University of Kamalia (UKM)</p></div>
+        <div class="edu"><small>INTERMEDIATE</small><h3>FSc Pre-Medical</h3><p>Superior College, Kamalia</p></div>
+        <div class="edu"><small>SECONDARY</small><h3>Matriculation</h3><p>Ravian Science High School</p></div>
+      </div>
+      <div class="extras">
+        <div class="extra"><b>Achievement</b>Recipient of the Honhaar Scholarship</div>
+        <div class="extra"><b>Certification</b>Office Management Course</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="kicker">Contact</div>
+      <h2>Let's connect.</h2>
+      <div class="contact-big">
+        <a href="mailto:naverasajjad@gmail.com">Email <span>naverasajjad@gmail.com</span></a>
+        <a href="tel:03116484875">Phone <span>0311-6484875</span></a>
+        <a href="https://linkedin.com/in/navera-sajjad-2aa071417/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+        <a href="https://github.com/naverasajjad11-ray" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+      </div>
+    </section>
+    <footer>© <span id="year"></span> Navera Sajjad</footer>
+  </main>
+</div>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
